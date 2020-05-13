@@ -25,6 +25,14 @@ module.exports = {
           ['guide/thanks', '感谢支持'],
         ],
       },
+      {
+        title: '路由配置',
+        collapsable: false,
+        children: [
+          ['router/', '路由层级'],
+          ['router/api', 'api回文格式'],
+        ],
+      },
     ],
     lastUpdated: '上次更新',
   },
