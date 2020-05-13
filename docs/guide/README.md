@@ -50,4 +50,4 @@ npm run dev
 
 启动完成后，在控制台可监听【当前路由】和【左侧菜单】：
 
-<img src="$withBase('/assets/控制台查看.png')">
+<img :src="$withBase('/assets/控制台查看.png')">
