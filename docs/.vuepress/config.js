@@ -7,6 +7,7 @@ module.exports = {
   ga: '',
   evergreen: true,
   themeConfig: {
+    // docsDir: 'docs', // 如果你的文档不在仓库的根部
     nav: [
       { text: '首页', link: '/' },
       { text: '文档', link: '/guide/' },
