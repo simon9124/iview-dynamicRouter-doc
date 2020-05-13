@@ -2,7 +2,7 @@ module.exports = {
   base: '/iview-dynamicRouter-doc/',
   title: 'iView DynamicRouter',
   description: '基于 iview-admin 的后端动态生成路由模板',
-  head: [['link', { rel: 'icon', href: `/logo.ico` }]],
+  head: [['link', { rel: 'icon', href: `/favicon.ico` }]],
   dest: './docs/.vuepress/dist',
   ga: '',
   evergreen: true,
