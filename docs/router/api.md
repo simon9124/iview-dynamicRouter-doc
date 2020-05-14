@@ -39,5 +39,5 @@ const menuList = [
 | showLevel | 路由层级     | 更具路由层级\*，渲染路由和左侧菜单        | `Number`  |
 
 ::: tip 路由层级
-<a href="/router">详细的路由和菜单层级</a>，可自行配置并修改相关代码
+<a :href="$withBase('/router')">详细的路由和菜单层级</a>，可自行配置并修改相关代码
 :::
