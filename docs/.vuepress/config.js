@@ -31,6 +31,7 @@ module.exports = {
         children: [
           ['router/', '路由层级'],
           ['router/api', 'api回文格式'],
+          ['router/example', '示例'],
         ],
       },
     ],
