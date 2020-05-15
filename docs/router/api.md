@@ -31,13 +31,16 @@ const menuList = [
 | name      | 名称         | 生成路由的 name                           | `String`  |
 | title     | 展示名       | 生成路由的 meta.title                     | `String`  |
 | url       | url 地址     | 数据处理后，生成路由的 meta.href 或 path  | `String`  |
-| path      | 前端组件地址 | 数据处理后，生成路由的 component          | `String`  |
-| sort      | 路由排序     | 当前路由进行排序                          | `Number`  | 后端排序可忽略    |
+| path      | 前端组件地址 | 数据处理后，生成路由的 component          | `String`  | [1]               |
+| sort      | 路由排序     | 当前层级的路由/子路由排序                 | `Number`  | 后端排序可忽略    |
 | parentId  | 父级 id      | 子路由 parentId 根据父路由的 id 进行挂载  | `String`  | 根路由必须为 root |
 | ico       | icon 图标    | 生成路由的 meta.icon，仅限 iview          | `String`  | 根路由不可为空    |
 | isOutSide | 是否外链     | 该路由是否为外链，可选值为 `true` `false` | `Boolean` |
-| showLevel | 路由层级     | 更具路由层级\*，渲染路由和左侧菜单        | `Number`  |
+| showLevel | 路由层级     | 更具路由层级\*，渲染路由和左侧菜单        | `Number`  | [1]               |
 
-::: tip 路由层级
+::: tip [1] 前端组件地址
+此项较为关键，不同路由差异较大，详见<a :href="$withBase('/router/example')">示例</a>
+:::
+::: tip [2] 路由层级
 <a :href="$withBase('/router')">详细的路由和菜单层级</a>，可自行配置并修改相关代码
 :::
