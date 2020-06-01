@@ -18,7 +18,7 @@ const menuList = [
     parentId: 'root',
     ico: 'ios-book',
     isOutSide: true,
-    showLevel: 1,
+    showLevel: '1',
   },
 ]
 ```
@@ -36,7 +36,7 @@ const menuList = [
 | parentId  | 父级 id      | 子路由 parentId 根据父路由的 id 进行挂载  | `String`  | 根路由必须为 root |
 | ico       | icon 图标    | 生成路由的 meta.icon，仅限 iview          | `String`  | 根路由不可为空    |
 | isOutSide | 是否外链     | 该路由是否为外链，可选值为 `true` `false` | `Boolean` |
-| showLevel | 路由层级     | 更具路由层级\*，渲染路由和左侧菜单        | `Number`  | [1]               |
+| showLevel | 路由层级     | 更具路由层级\*，渲染路由和左侧菜单        | `String`  | [2]               |
 
 ::: tip [1] 前端组件地址
 此项较为关键，不同路由差异较大，详见<a :href="$withBase('/router/example')">示例</a>
