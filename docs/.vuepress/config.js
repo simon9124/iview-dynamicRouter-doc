@@ -34,6 +34,16 @@ module.exports = {
           ['router/example', '示例'],
         ],
       },
+      {
+        title: '权限管理',
+        collapsable: false,
+        children: [
+          ['authority/diagram', '逻辑关系'],
+          ['authority/user', '用户管理'],
+          ['authority/role', '角色管理'],
+          ['authority/menu', '菜单管理'],
+        ],
+      },
     ],
     lastUpdated: '上次更新',
   },
