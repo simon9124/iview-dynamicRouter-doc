@@ -1,6 +1,6 @@
 # 示例
 
-根据 <a :href="$withBase('/router')">3 种路由层级</a>，提供 4 个完整的路由配置示例：
+根据 <a :href="$withBase('/document/router')">3 种路由层级</a>，提供 4 个完整的路由配置示例：
 
 ## main 组件内，父包含多个子
 
@@ -105,7 +105,7 @@ const menuList = [
 ```
 
 ::: tip 作为子路由的单独页面
-parentId 不是 root——即作为子路由时，仍可作为非 main 组件内的单独页面，并且出现在左侧菜单中。其方法与<a :href="$withBase('/router/example.html#main-组件内，父包含多个子')">父子路由</a>相同，只需将 parentId 配置为父级路由的 id 即可。
+parentId 不是 root——即作为子路由时，仍可作为非 main 组件内的单独页面，并且出现在左侧菜单中。其方法与<a :href="$withBase('/document/router/example.html#main-组件内，父包含多个子')">父子路由</a>相同，只需将 parentId 配置为父级路由的 id 即可。
 :::
 
 ## 外链，新页面打开
@@ -132,7 +132,7 @@ const menuList = [
 ```
 
 ::: tip 作为子路由的外链
-同<a :href="$withBase('/router/example.html#非-main-组件内，单独页面')">单独页面</a>，parentId 不是 root——即作为子路由时，仍可作为外链，并且出现在左侧菜单中。其方法与<a :href="$withBase('/router/example.html#main-组件内，父包含多个子')">父子路由</a>相同，只需将 parentId 配置为父级路由的 id 即可。
+同<a :href="$withBase('/document/router/example.html#非-main-组件内，单独页面')">单独页面</a>，parentId 不是 root——即作为子路由时，仍可作为外链，并且出现在左侧菜单中。其方法与<a :href="$withBase('/document/router/example.html#main-组件内，父包含多个子')">父子路由</a>相同，只需将 parentId 配置为父级路由的 id 即可。
 
 作为子路由且显示在菜单栏的【单独页面】和【外链】:
 <img class="img-margin-top" :src="$withBase('/assets/作为子路由且显示在菜单栏的【单独页面】和【外链】.png')">

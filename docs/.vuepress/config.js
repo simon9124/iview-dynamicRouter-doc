@@ -10,41 +10,45 @@ module.exports = {
     // docsDir: 'docs', // 如果你的文档不在仓库的根部
     nav: [
       { text: '首页', link: '/' },
-      { text: '文档', link: '/guide/' },
+      { text: '使用文档', link: '/document/guide/' },
+      { text: '开发指南', link: '/develop/axios/' },
       {
         text: 'GitHub',
         link: 'https://github.com/simon9124/iview-dynamicRouter',
       },
-    ], // 头部导航
-    sidebar: [
-      {
-        title: '基础信息',
-        collapsable: false,
-        children: [
-          ['guide/', '简介'],
-          ['guide/thanks', '感谢支持'],
-        ],
-      },
-      {
-        title: '路由配置',
-        collapsable: false,
-        children: [
-          ['router/', '路由层级'],
-          ['router/api', 'api回文格式'],
-          ['router/example', '示例'],
-        ],
-      },
-      {
-        title: '权限管理',
-        collapsable: false,
-        children: [
-          ['authority/diagram', '逻辑关系'],
-          ['authority/user', '用户管理'],
-          ['authority/role', '角色管理'],
-          ['authority/menu', '菜单管理'],
-        ],
-      },
-    ],
-    lastUpdated: '上次更新',
+    ], // 导航栏
+    sidebar: {
+      '/document/': [
+        {
+          title: '基础信息',
+          collapsable: false,
+          children: [
+            ['/document/guide/', '简介'],
+            ['/document/guide/thanks', '感谢支持'],
+          ],
+        },
+        {
+          title: '路由配置',
+          collapsable: false,
+          children: [
+            ['/document/router/', '路由层级'],
+            ['/document/router/api', 'api回文格式'],
+            ['/document/router/example', '示例'],
+          ],
+        },
+        {
+          title: '权限管理',
+          collapsable: false,
+          children: [
+            ['/document/authority/diagram', '逻辑关系'],
+            ['/document/authority/user', '用户管理'],
+            ['/document/authority/role', '角色管理'],
+            ['/document/authority/menu', '菜单管理'],
+          ],
+        },
+      ],
+      '/develop/': ['/develop/axios/', '/develop/mockData/'],
+    }, // 侧边栏
+    // lastUpdated: '上次更新',
   },
 }
