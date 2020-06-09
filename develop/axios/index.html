@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>axios 改造 | iView DynamicRouter</title>
+    <meta name="generator" content="VuePress 1.5.0">
+    <link rel="icon" href="/iview-dynamicRouter-doc/favicon.ico">
+    <meta name="description" content="基于 iview-admin 的后端动态生成路由模板">
+    <link rel="preload" href="/iview-dynamicRouter-doc/assets/css/0.styles.53d8d4e9.css" as="style"><link rel="preload" href="/iview-dynamicRouter-doc/assets/js/app.bc541f03.js" as="script"><link rel="preload" href="/iview-dynamicRouter-doc/assets/js/2.cbc301c3.js" as="script"><link rel="preload" href="/iview-dynamicRouter-doc/assets/js/6.92d13309.js" as="script"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/10.cb8a3eee.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/11.9b45cc9f.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/12.a1c0179b.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/13.51307e3f.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/14.ee8cdcff.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/15.26aab6b4.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/16.6fddf027.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/3.03bd0334.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/4.c2c9c270.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/5.bc44bdb7.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/7.e6358655.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/8.c934012a.js"><link rel="prefetch" href="/iview-dynamicRouter-doc/assets/js/9.2c1f86e9.js">
+    <link rel="stylesheet" href="/iview-dynamicRouter-doc/assets/css/0.styles.53d8d4e9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/iview-dynamicRouter-doc/" class="home-link router-link-active"><!----> <span class="site-name">iView DynamicRouter</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/iview-dynamicRouter-doc/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/iview-dynamicRouter-doc/document/guide/" class="nav-link">
+  使用文档
+</a></div><div class="nav-item"><a href="/iview-dynamicRouter-doc/develop/axios/" class="nav-link router-link-exact-active router-link-active">
+  开发指南
+</a></div><div class="nav-item"><a href="https://github.com/simon9124/iview-dynamicRouter" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/iview-dynamicRouter-doc/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/iview-dynamicRouter-doc/document/guide/" class="nav-link">
+  使用文档
+</a></div><div class="nav-item"><a href="/iview-dynamicRouter-doc/develop/axios/" class="nav-link router-link-exact-active router-link-active">
+  开发指南
+</a></div><div class="nav-item"><a href="https://github.com/simon9124/iview-dynamicRouter" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/iview-dynamicRouter-doc/develop/axios/" class="active sidebar-link">axios 改造</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/iview-dynamicRouter-doc/develop/axios/#axios-js" class="sidebar-link">axios.js</a></li><li class="sidebar-sub-header"><a href="/iview-dynamicRouter-doc/develop/axios/#login-js" class="sidebar-link">login.js</a></li><li class="sidebar-sub-header"><a href="/iview-dynamicRouter-doc/develop/axios/#user-js" class="sidebar-link">user.js</a></li><li class="sidebar-sub-header"><a href="/iview-dynamicRouter-doc/develop/axios/#login-vue" class="sidebar-link">login.vue</a></li></ul></li><li><a href="/iview-dynamicRouter-doc/develop/mockData/" class="sidebar-link">mockData</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="axios-改造"><a href="#axios-改造" class="header-anchor">#</a> axios 改造</h1> <p>对 axios 进行改造，使其更符合后端的回文格式：</p> <ul><li>libs &gt; <a href="/iview-dynamicRouter-doc/develop/axios/#axios-js">axios.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/axios.js" target="_blank">完整代码 →</a></li> <li>mock &gt; login.js</li> <li>store &gt; user.js</li> <li>view &gt; login.vue</li></ul> <h2 id="axios-js"><a href="#axios-js" class="header-anchor">#</a> axios.js</h2> <h4 id="_1-导入-gettoken-和-message-两个方法："><a href="#_1-导入-gettoken-和-message-两个方法：" class="header-anchor">#</a> 1.导入 <code>getToken</code> 和 <code>Message</code> 两个方法：</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> getToken <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./util'</span> <span class="token comment">// 追加：获取token</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Message <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'iview'</span> <span class="token comment">// 追加：全局提示消息</span>
+</code></pre></div><h4 id="_2-请求拦截：将-token-放入请求头"><a href="#_2-请求拦截：将-token-放入请求头" class="header-anchor">#</a> 2.请求拦截：将 <code>token</code> 放入请求头</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code>instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 追加：如果响应含有token，则让每个请求携带token，将token放入请求头的Authorization</span>
+    <span class="token function">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>config<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>Authorization <span class="token operator">=</span> <span class="token string">'Bearer '</span> <span class="token operator">+</span> <span class="token function">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment">// 添加全局的loading...</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Spin.show() // 不建议开启，因为界面不友好</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>queue<span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">return</span> config
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre></div><h4 id="_3-响应拦截：根据-res-status-提示全局消息"><a href="#_3-响应拦截：根据-res-status-提示全局消息" class="header-anchor">#</a> 3.响应拦截：根据 <code>res.status</code> 提示全局消息</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code>instance<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 追加：根据 res.status 弹出全局消息</span>
+    <span class="token keyword">switch</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token number">200</span><span class="token operator">:</span> <span class="token comment">// 200 -&gt; 服务器连接正确</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token boolean">true</span> <span class="token operator">&amp;&amp;</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 全局提示5秒的错误讯息</span>
+          Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span> content<span class="token operator">:</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>message<span class="token punctuation">,</span> duration<span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">break</span>
+      <span class="token keyword">case</span> <span class="token number">500</span><span class="token operator">:</span> <span class="token comment">// 500 -&gt; 服务器错误</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>status<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+        Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          content<span class="token operator">:</span> <span class="token string">'服务器异常，请联系技术人员'</span><span class="token punctuation">,</span>
+          duration<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">destroy</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> status <span class="token punctuation">}</span> <span class="token operator">=</span> res
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> status <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span>
+</code></pre></div><h2 id="login-js"><a href="#login-js" class="header-anchor">#</a> login.js</h2> <h2 id="user-js"><a href="#user-js" class="header-anchor">#</a> user.js</h2> <h2 id="login-vue"><a href="#login-vue" class="header-anchor">#</a> login.vue</h2></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/iview-dynamicRouter-doc/develop/mockData/">
+        mockData
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/iview-dynamicRouter-doc/assets/js/app.bc541f03.js" defer></script><script src="/iview-dynamicRouter-doc/assets/js/2.cbc301c3.js" defer></script><script src="/iview-dynamicRouter-doc/assets/js/6.92d13309.js" defer></script>
+  </body>
+</html>
