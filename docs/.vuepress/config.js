@@ -47,7 +47,15 @@ module.exports = {
           ],
         },
       ],
-      '/develop/': ['/develop/axios/', '/develop/mockData/'],
+      '/develop/': [
+        {
+          title: '1.axios 改造',
+          collapsable: false,
+          children: [['/develop/axios/', '总览']],
+        },
+        // '/develop/axios/',
+        '/develop/mockData/',
+      ],
     }, // 侧边栏
     // lastUpdated: '上次更新',
   },

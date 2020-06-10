@@ -3,10 +3,10 @@
 对 axios 进行改造，使其更符合后端的回文格式：
 
 - libs > <a :href="$withBase('/develop/axios/#axios-js')">axios.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/axios.js" target="_blank">完整代码 →</a>
-- mock > role.js
-- mock > login.js
-- store > user.js
-- view > login.vue
+- mock > <a :href="$withBase('/develop/axios/#role-js')">role.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">完整代码 →</a>
+- mock > <a :href="$withBase('/develop/axios/#login-js')">login.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">完整代码 →</a>
+- store > <a :href="$withBase('/develop/axios/#user-js')">user.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">完整代码 →</a>
+- view > <a :href="$withBase('/develop/axios/#login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
 
 ## axios.js
 
@@ -21,7 +21,7 @@ import { Message } from 'iview' // 追加：全局提示消息
 
 ```javascript
 instance.interceptors.request.use(
-  (config) => {
+  config => {
     // 追加：如果响应含有token，则让每个请求携带token，将token放入请求头的Authorization
     getToken() && (config.headers.Authorization = 'Bearer ' + getToken())
     // 添加全局的loading...
@@ -31,7 +31,7 @@ instance.interceptors.request.use(
     this.queue[url] = true
     return config
   },
-  (error) => {...}
+  error => {...}
 )
 ```
 
@@ -39,7 +39,7 @@ instance.interceptors.request.use(
 
 ```javascript
 instance.interceptors.response.use(
-  (res) => {
+  res => {
     // 追加：根据 res.status 弹出全局消息
     switch (res.status) {
       case 200: // 200 -> 服务器连接正确
@@ -60,7 +60,7 @@ instance.interceptors.response.use(
     const { data, status } = res
     return { data, status }
   },
-  (error) => {...}
+  error => {...}
 )
 ```
 
@@ -92,6 +92,8 @@ const userList = [
 export { userList }
 ```
 
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">`role.js` 完整代码 →</a>
+
 ## login.js
 
 #### 1.导入 `store` 和 `userList`：
@@ -122,14 +124,14 @@ export const login = (req) => {
   req = JSON.parse(req.body)
   const USER_MAP = getUserMap(userList)
   if (USER_MAP[req.userName] !== undefined) {
-    // 用户名存在，返回200
+    // 用户名存在，返回200和数据回文
     return {
       status: 200,
       message: '成功！',
-      data: USER_MAP[req.userName].name,
+      token: USER_MAP[req.userName].name,
     }
   } else {
-    // 用户名不存在，返回500
+    // 用户名不存在，返回500和错误提示
     return { status: 500, message: '用户名或密码错误！', data: null }
   }
 }
@@ -142,7 +144,7 @@ export const login = (req) => {
 export const getUserInfo = (req) => {
   const USER_MAP = getUserMap(userList)
   if (store.state.user.token !== undefined) {
-    // 如果token存在，返回200
+    // token存在，返回200和数据回文
     return {
       status: 200,
       message: '成功！',
@@ -152,6 +154,69 @@ export const getUserInfo = (req) => {
 }
 ```
 
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">`login.js` 完整代码 →</a>
+
 ## user.js
 
+#### 1.`handleLogin` 方法微调，`setToken` 提交后在 `resolve()` 中返回 `res`
+
+```javascript
+// 登录
+handleLogin({ commit }, { userName, password }) {
+  userName = userName.trim();
+  return new Promise((resolve, reject) => {
+    login({
+      userName,
+      password
+    })
+      .then(res => {
+        const data = res.data;
+        commit("setToken", data.token);
+        resolve(res); // 改造：resolve() 中返回 res
+      })
+      .catch(err => {...});
+  });
+}
+```
+
+#### 2.根据 `@/mock/login.js` 的 `getUserInfo` 接口回文，对 `getUserInfo` 方法微调：
+
+```javascript
+// 获取用户相关信息
+getUserInfo({ state, commit }) {
+  return new Promise((resolve, reject) => {
+    try {
+      getUserInfo(state.token)
+        .then(res => {
+          const data = res.data.data; // 根据回文结构微调
+          commit("setAvator", data.data.avator);
+          commit("setUserName", data.data.name);
+          commit("setUserId", data.data.user_id);
+          commit("setAccess", data.data.access);
+          commit("setHasGetInfo", true);
+          resolve(data);
+        })
+        .catch(err => {...});
+    } catch (error) {...}
+  });
+}
+```
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">`user.js` 完整代码 →</a>
+
 ## login.vue
+
+#### `handleSubmit` 方法微调，根据回文决定是否调用 `getUserInfo` 方法
+
+```javascript
+handleSubmit({ userName, password }) {
+  this.handleLogin({ userName, password }).then(res => {
+    res.data.status === 200 && // 登录成功返回200，才调用 getUserInfo 方法
+      this.getUserInfo().then(res => {
+        ...
+      });
+  });
+}
+```
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">`login.vue` 完整代码 →</a>
