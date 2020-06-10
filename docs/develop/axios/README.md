@@ -2,13 +2,13 @@
 
 对 axios 进行改造，使其更符合后端的回文格式：
 
-- libs > <a :href="$withBase('/develop/axios/#axios-js')">axios.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/axios.js" target="_blank">完整代码 →</a>
-- mock > <a :href="$withBase('/develop/axios/#role-js')">role.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">完整代码 →</a>
-- mock > <a :href="$withBase('/develop/axios/#login-js')">login.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">完整代码 →</a>
-- store > <a :href="$withBase('/develop/axios/#user-js')">user.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">完整代码 →</a>
-- view > <a :href="$withBase('/develop/axios/#login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
+- libs > <a :href="$withBase('/develop/axios/#libs-axios-js')">axios.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/axios.js" target="_blank">完整代码 →</a>
+- mock > <a :href="$withBase('/develop/axios/#mock-role-js')">role.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">完整代码 →</a>
+- mock > <a :href="$withBase('/develop/axios/#mock-login-js')">login.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">完整代码 →</a>
+- store > <a :href="$withBase('/develop/axios/#store-user-js')">user.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">完整代码 →</a>
+- view > <a :href="$withBase('/develop/axios/#view-login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
 
-## axios.js
+## libs > axios.js
 
 #### 1.导入 `getToken` 和 `Message` 两个方法：
 
@@ -66,7 +66,7 @@ instance.interceptors.response.use(
 
 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/axios.js" target="_blank">`axios.js` 完整代码 →</a>
 
-## role.js
+## mock > role.js
 
 #### 用更符合后端回文规范的 `userList` 代替原有的 `USER_MAP`：
 
@@ -92,9 +92,11 @@ const userList = [
 export { userList }
 ```
 
+<a :href="$withBase('/document/authority/user.html#回文格式')">用户列表配置 api →</a>
+
 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">`role.js` 完整代码 →</a>
 
-## login.js
+## mock > login.js
 
 #### 1.导入 `store` 和 `userList`：
 
@@ -156,7 +158,7 @@ export const getUserInfo = (req) => {
 
 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">`login.js` 完整代码 →</a>
 
-## user.js
+## store > user.js
 
 #### 1.`handleLogin` 方法微调，`setToken` 提交后在 `resolve()` 中返回 `res`
 
@@ -204,7 +206,7 @@ getUserInfo({ state, commit }) {
 
 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">`user.js` 完整代码 →</a>
 
-## login.vue
+## view > login.vue
 
 #### `handleSubmit` 方法微调，根据回文决定是否调用 `getUserInfo` 方法
 
