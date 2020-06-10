@@ -1,53 +1,171 @@
 # mockData
 
-<a href="https://github.com/iview/iview-admin/tree/template" target="_blank"><img src="https://img.shields.io/badge/iview--admin-template-brightgreen"></a>
+追加模拟数据，并注册相关事件：
 
-<a href="https://github.com/simon9124/iview-dynamicRouter" target="_blank">iView-DynamicRouter</a> 基于 <a href="https://github.com/iview/iview-admin/tree/template" target="_blank">iview-admin(branch:template)</a>，不同的是由后端获取路由表数据，数据经处理后生成动态路由和菜单的【后端动态路由模板】，为后台管理系统增加安全保障。
+- mock > <a :href="$withBase('/develop/mockData/#mock-role-js')">role.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">完整代码 →</a>
+- mock > <a :href="$withBase('/develop/mockData/#mock-data-js')">data.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/data.js" target="_blank">完整代码 →</a>
+- mock > <a :href="$withBase('/develop/mockData/#mock-index-js')">index.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/index.js" target="_blank">完整代码 →</a>
+- api > <a :href="$withBase('/develop/mockData/#api-data-js')">data.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/api/data.js" target="_blank">完整代码 →</a>
 
-::: tip Mock Data
-为方便开发和演示，当前项目由 <a href="http://mockjs.com/" target="_blank">mockjs</a> 模拟接口并返回模拟路由数据
-:::
+## mock > role.js
 
-## 目录结构
+#### 1.追加 `角色列表`：
 
-整体目录结构与原 iview-admin 相同，部分内容有改动：
+```javascript
+// 角色列表
+const roleList = [
+  {
+    name: 'super_admin',
+    title: '超级管理员',
+    menus: ['doc','control'...],
+    id: '1',
+    description: '超级管理员，默认拥有全部功能，不可删除',
+  },
+  {
+    name: 'visitor',
+    title: '访客',
+    menus: ['control','multilevel'...],
+    id: '2',
+    description: '访客，拥有部分功能，可删除',
+  },
+]
 
-```bash
-- config  开发相关配置
-- public  打包所需静态资源
-- src
-  - api  AJAX请求   -> 追加：动态获取路由方法
-  - assets  项目静态资源
-  - icons  自定义图标资源
-  - images  图片资源
-  - components  业务组件
-  - config  项目运行配置
-  - directive  自定义指令
-  - libs  封装工具函数   -> 追加：若干路由数据处理函数
-  - locale  多语言文件
-  - mock  mock模拟数据   -> 追加：路由列表、路由层级、角色列表 等数据
-  - router  路由配置   -> 有较多改动
-  - store  Vuex配置   -> 有较多改动
-  - view  页面文件   -> 追加：template.vue 和 screent.vue 页面模板
-  - tests  测试相关
+export { roleList }
 ```
 
-## 安装使用
+<a :href="$withBase('/document/authority/role.html#回文格式')">角色列表配置 api →</a>
 
-```bash
-# 克隆项目
-git clone https://github.com/simon9124/iview-dynamicRouter
+#### 2.追加 `路由层级`：
 
-# 进入项目目录
-cd vue-element-admin
+```javascript
+// 路由层级
+const menuLevel = [
+  {
+    label: '菜单显示该页面选项，页面不含菜单栏',
+    value: '1',
+  },
+  {
+    label: '菜单显示该页面选项，页面含菜单栏',
+    value: '2',
+  },
+  {
+    label: '菜单隐藏该页面选项，页面不含菜单栏',
+    value: '3',
+  },
+]
 
-# 安装依赖
-npm install
-
-# 本地开发 启动项目
-npm run dev
+export { menuLevel }
 ```
 
-启动完成后，在控制台可监听【当前路由】和【左侧菜单】：
+#### 3.追加 `路由列表`：
 
-<img :src="$withBase('/assets/控制台查看.png')">
+```javascript
+// 路由列表
+const menuList = [
+  {
+    id: "doc",
+    name: "doc",
+    title: "文档",
+    url: "https://simon9124.github.io/iview-dynamicRouter-doc/",
+    path: "outSidePath",
+    sort: 28,
+    parentId: "root",
+    ico: "ios-book",
+    isOutSide: true,
+    showLevel: "1",
+    description: "在线文档"
+  },
+  {
+    id: "control",
+    name: "control",
+    title: "驾驶舱",
+    url: "control",
+    path: "screen",
+    sort: 26,
+    parentId: "root",
+    ico: "md-laptop",
+    isOutSide: false,
+    showLevel: "1",
+    description: "一级大屏"
+  },
+  ...
+];
+
+export { menuList }
+```
+
+<a :href="$withBase('/document/router/api.html')">路由列表配置 api →</a>
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">`role.js` 完整代码 →</a>
+
+## mock > data.js
+
+#### 1.导入 `userList` 、`roleList`、`menuList` ：
+
+```javascript
+import {
+  userList, // 用户列表
+  roleList, // 角色列表
+  menuList, // 菜单列表
+} from './role'
+```
+
+#### 2.相关事件和数据回文 ：
+
+```javascript
+// 获取用户列表
+export const getUserList = (req) => {
+  return { status: 200, message: '成功！', data: userList }
+}
+
+// 获取角色列表
+export const getRoleList = (req) => {
+  return { status: 200, message: '成功！', data: roleList }
+}
+
+// 获取菜单列表
+export const getAllMenus = (req) => {
+  return { status: 200, message: '成功！', data: menuList }
+}
+```
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/data.js" target="_blank">`data.js` 完整代码 →</a>
+
+## mock > index.js
+
+#### 注册相关事件 ：
+
+```javascript
+import { getUserList, getRoleList, getAllMenus } from "./data";
+...
+Mock.mock(/\/get_user_list/, getUserList);
+Mock.mock(/\/get_role_list/, getRoleList);
+Mock.mock(/\/get_all_menus/, getAllMenus);
+...
+export default Mock;
+```
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/index.js" target="_blank">`index.js` 完整代码 →</a>
+
+## api > data.js
+
+#### 相关接口：
+
+```javascript
+// 获取用户数据
+export const getUserList = () => {
+  return axios.request({ url: 'get_user_list', method: 'get' })
+}
+
+// 获取角色数据
+export const getRoleList = () => {
+  return axios.request({ url: 'get_role_list', method: 'get' })
+}
+
+// 获取菜单数据
+export const getAllMenus = (token) => {
+  return axios.request({ url: 'get_all_menus', method: 'get' })
+}
+```
+
+<a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/api/data.js" target="_blank">`data.js` 完整代码 →</a>
