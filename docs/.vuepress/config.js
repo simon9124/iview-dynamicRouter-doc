@@ -53,11 +53,17 @@ module.exports = {
           collapsable: false,
           children: [
             ['/develop/axios/', '总览'],
-            ['/develop/axios/achievement', '总结'],
+            ['/develop/axios/achievement', '总结 & 成果'],
           ],
         },
-        // '/develop/axios/',
-        '/develop/mockData/',
+        {
+          title: '2.mockData',
+          collapsable: false,
+          children: [
+            ['/develop/mockData/', '总览'],
+            ['/develop/mockData/achievement', '总结 & 成果'],
+          ],
+        },
       ],
     }, // 侧边栏
     // lastUpdated: '上次更新',
