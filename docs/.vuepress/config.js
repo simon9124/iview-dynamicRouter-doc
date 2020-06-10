@@ -51,7 +51,10 @@ module.exports = {
         {
           title: '1.axios 改造',
           collapsable: false,
-          children: [['/develop/axios/', '总览']],
+          children: [
+            ['/develop/axios/', '总览'],
+            ['/develop/axios/achievement', '总结'],
+          ],
         },
         // '/develop/axios/',
         '/develop/mockData/',
