@@ -212,9 +212,7 @@ getUserInfo({ state, commit }) {
 handleSubmit({ userName, password }) {
   this.handleLogin({ userName, password }).then(res => {
     res.data.status === 200 && // 登录成功返回200，才调用 getUserInfo 方法
-      this.getUserInfo().then(res => {
-        ...
-      });
+      this.getUserInfo().then(res => {...});
   });
 }
 ```
