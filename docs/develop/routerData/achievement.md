@@ -13,12 +13,12 @@ sidebarDepth: 0
 
 - `用户登录` 后，从 `api` 获取 `处理后的路由数据`
 
-<img :src="$withBase('/assets/路由数据处理_成果1.png')">
+<img style="width:100%" :src="$withBase('/assets/路由数据处理_成果1.png')">
 
 - `登录后刷新页面` 后，从 `localStorage` 获取 `处理后的路由数据`
 
-<img :src="$withBase('/assets/路由数据处理_成果2.png')">
+<img style="width:100%" :src="$withBase('/assets/路由数据处理_成果2.png')">
 
 - `用户登录`、`用户登出` 时，在 `localStorage` 中监听 `dynamicRouter-template` 的变化，`localStorage` 中 `component` 存储格式为 `String`，是**未转化成前端组件的字符串**
 
-<img :src="$withBase('/assets/路由数据处理_成果3.png')">
+<img style="width:100%" :src="$withBase('/assets/路由数据处理_成果3.png')">

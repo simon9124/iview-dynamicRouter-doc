@@ -1,12 +1,12 @@
 # 路由数据处理
 
-`路由数据处理` 和 `路由改造` 是整个开发步骤的核心部分，需要开发者理清其完整的思路，同时需封装多个方法：
+`路由数据处理`、<a :href="$withBase('/develop/routerRemould/')">路由改造</a>、`菜单处理` 是整个开发步骤的核心部分。`路由数据处理` 时，需要开发者理清其完整的思路，同时需封装多个方法：
 
 <img class="img-margin-top" :src="$withBase('/assets/路由数据处理.png')">
 
 - store > module > <a :href="$withBase('/develop/routerData/#store-module-app-js')">app.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/app.js" target="_blank">完整代码 →</a>
-- view > login > <a :href="$withBase('/develop/routerData/#view-login-login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/app.js" target="_blank">完整代码 →</a>
-- libs > <a :href="$withBase('/develop/routerData/#libs-router-util-js')">router-util.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/app.js" target="_blank">完整代码 →</a>
+- view > login > <a :href="$withBase('/develop/routerData/#view-login-login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
+- libs > <a :href="$withBase('/develop/routerData/#libs-router-util-js')">router-util.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/router-util.js" target="_blank">完整代码 →</a>
 - libs > dataHanding.js > <a :href="$withBase('/develop/routerData/#libs-datahanding-js')">arraySort()</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/dataHanding.js#LC118" target="_blank">完整代码 →</a>
 - libs > tools.js > <a :href="$withBase('/develop/routerData/#libs-tools-js')">lazyLoadingCop()</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/libs/tools.js#LC217" target="_blank">完整代码 →</a>
 - store > module > <a :href="$withBase('/develop/routerData/#store-module-user-js')">user.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">完整代码 →</a>
