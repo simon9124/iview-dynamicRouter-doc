@@ -64,6 +64,14 @@ module.exports = {
             ['/develop/mockData/achievement', '总结 & 成果'],
           ],
         },
+        {
+          title: '3.路由数据处理',
+          collapsable: false,
+          children: [
+            ['/develop/routerData/', '总览'],
+            ['/develop/routerData/achievement', '总结 & 成果'],
+          ],
+        },
       ],
     }, // 侧边栏
     // lastUpdated: '上次更新',
