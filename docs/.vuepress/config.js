@@ -72,8 +72,17 @@ module.exports = {
             ['/develop/routerData/achievement', '总结 & 成果'],
           ],
         },
+        {
+          title: '4.路由改造',
+          collapsable: false,
+          children: [
+            ['/develop/routerRemould/', '总览'],
+            ['/develop/routerRemould/debug', '调试'],
+            ['/develop/routerRemould/achievement', '总结 & 成果'],
+          ],
+        },
       ],
     }, // 侧边栏
-    // lastUpdated: '上次更新',
+    lastUpdated: '上次更新',
   },
 }
