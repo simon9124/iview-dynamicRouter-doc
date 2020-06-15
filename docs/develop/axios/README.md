@@ -6,7 +6,7 @@
 - mock > <a :href="$withBase('/develop/axios/#mock-role-js')">role.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">完整代码 →</a>
 - mock > <a :href="$withBase('/develop/axios/#mock-login-js')">login.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/login.js" target="_blank">完整代码 →</a>
 - store > <a :href="$withBase('/develop/axios/#store-user-js')">user.js</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">完整代码 →</a>
-- view > <a :href="$withBase('/develop/axios/#view-login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
+- view > login > <a :href="$withBase('/develop/axios/#view-login-login-vue')">login.vue</a> / <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/view/login/login.vue" target="_blank">完整代码 →</a>
 
 ## libs > axios.js
 
@@ -206,7 +206,7 @@ getUserInfo({ state, commit }) {
 
 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/store/module/user.js" target="_blank">`user.js` 完整代码 →</a>
 
-## view > login.vue
+## view > login > login.vue
 
 #### `handleSubmit` 方法微调，根据回文决定是否调用 `getUserInfo` 方法
 
