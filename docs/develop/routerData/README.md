@@ -1,6 +1,6 @@
 # 路由数据处理
 
-`路由数据处理`、<a :href="$withBase('/develop/routerRemould/')">路由改造</a>、`菜单处理` 是整个开发步骤的核心部分。`路由数据处理` 时，需要开发者理清其完整的思路，同时需封装多个方法：
+`路由数据处理`、<a :href="$withBase('/develop/routerRemould/')">路由改造</a>、<a :href="$withBase('/develop/menuRender/')">菜单渲染</a> 是整个开发步骤的核心部分。`路由数据处理` 时，需要开发者理清其完整的思路，同时需封装多个方法：
 
 <img class="img-margin-top" :src="$withBase('/assets/路由数据处理.png')">
 
