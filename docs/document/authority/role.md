@@ -11,7 +11,7 @@ sidebarDepth: 0
 
 ## 回文格式
 
-在 `@/mock/role.js` 里设置了默认的数据回文格式：
+在 <a href="https://github.com/simon9124/iview-dynamicRouter/blob/master/src/mock/role.js" target="_blank">@/mock/role.js</a> 里配置了默认的数据回文格式：
 
 ```javascript
 const userList = [
