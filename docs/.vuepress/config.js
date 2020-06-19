@@ -76,9 +76,18 @@ module.exports = {
           title: '4.路由改造',
           collapsable: false,
           children: [
-            ['/develop/routerRemould/', '总览'],
             ['/develop/routerRemould/debug', '调试'],
+            ['/develop/routerRemould/', '总览'],
             ['/develop/routerRemould/achievement', '总结 & 成果'],
+          ],
+        },
+        {
+          title: '5.菜单渲染',
+          collapsable: false,
+          children: [
+            ['/develop/menuRender/menuVSRouter', '菜单VS路由'],
+            ['/develop/menuRender/', '总览'],
+            ['/develop/menuRender/achievement', '总结 & 成果'],
           ],
         },
       ],
