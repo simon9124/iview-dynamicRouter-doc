@@ -10,7 +10,7 @@ module.exports = {
     // docsDir: 'docs', // 如果你的文档不在仓库的根部
     nav: [
       { text: '首页', link: '/' },
-      { text: '使用文档', link: '/document/guide/' },
+      { text: '配置文档', link: '/document/guide/' },
       { text: '开发指南', link: '/develop/axios/' },
       {
         text: 'GitHub',
@@ -37,7 +37,7 @@ module.exports = {
           ],
         },
         {
-          title: '权限管理',
+          title: '权限配置',
           collapsable: false,
           children: [
             ['/document/authority/diagram', '逻辑关系'],
@@ -45,6 +45,11 @@ module.exports = {
             ['/document/authority/role', '角色管理'],
             ['/document/authority/menu', '菜单管理'],
           ],
+        },
+        {
+          title: '其他',
+          collapsable: false,
+          children: [['/document/others/issues', '常见问题']],
         },
       ],
       '/develop/': [
