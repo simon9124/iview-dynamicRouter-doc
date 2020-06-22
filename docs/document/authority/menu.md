@@ -15,7 +15,7 @@ sidebarDepth: 0
 - 可选择任意 `上级`，上级根据 `模块菜单` 自动生成
 - 可选择任意 `层级`，详见 <a :href="$withBase('/document/router/')">路由层级</a>
 - 可配置任意 `name` 、`url` 、`展现名` 、`组件路径` 、`图标`
-- 可对菜单进行任意 `排序`（后端排序可忽略）
+- 可对菜单进行任意 `排序`
 
 <img class="img-margin-top" :src="$withBase('/assets/菜单管理_选择上级.png')">
 <img :src="$withBase('/assets/菜单管理_选择层级.png')">
