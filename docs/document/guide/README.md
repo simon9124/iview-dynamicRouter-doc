@@ -4,7 +4,7 @@
 
 <a href="https://github.com/simon9124/iview-dynamicRouter" target="_blank">iView-DynamicRouter</a> 基于 <a href="https://github.com/iview/iview-admin/tree/template" target="_blank">iview-admin(branch:template)</a>，由“后端动态提供路由数据，经前端处理后生成动态路由和菜单”的【后端动态路由模板】，内置“权限管理”业务模型，可任意调整左侧菜单栏、修改其相关权限、监听当前路由和菜单，是一套更安全、更智能的后台管理系统模板。
 
-该文档为 **配置文档**，如果您想快速使用，专注于该文档 并 **配置好相关数据回文** 即可运行 ~ 如果想和我一起，从 iview-admin 的原始框架一步步实现 **iView-DynamicRouter**，请看 <a :href="$withBase('/develop/axios/')" target="_blank">**开发指南 →**</a>
+该文档为 **配置文档**，如果您想快速使用，专注于该文档 并 **配置好相关数据回文** 即可运行 ~ 如果想和我一起，从 **iview-admin** 的原始框架一步步实现 **iView-DynamicRouter**，请看 <a :href="$withBase('/develop/axios/')" target="_blank">**开发指南 →**</a>
 
 ::: tip Mock Data
 为方便开发和演示，当前项目由 <a href="http://mockjs.com/" target="_blank">mockjs</a> 模拟接口并返回模拟路由数据
