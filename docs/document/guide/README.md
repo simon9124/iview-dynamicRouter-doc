@@ -36,6 +36,8 @@
   - 纯前端也可控制路由权限
 ```
 
+<img :src="$withBase('/assets/gif_新增菜单.gif')">
+
 ## 目录结构
 
 整体目录结构 iview-admin 原架构相同，部分内容有改动：
