@@ -78,7 +78,7 @@ const userList = [
     name: 'goku',
     displayName: '孙悟空',
     phone: '13888888881',
-    access: ['super_admin', 'visitor'],
+    access: ['super_admin'],
   },
   {
     user_id: '2',
