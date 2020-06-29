@@ -10,9 +10,25 @@
 为方便开发和演示，当前项目由 <a href="http://mockjs.com/" target="_blank">mockjs</a> 模拟接口并返回模拟路由数据
 :::
 
-## 功能介绍
+## 功能特点
 
-这里总结相比 iview-admin 原架构追加的新功能：
+登录后，**不同权限**的用户监听到不同的**动态路由**和**动态菜单**：
+
+<img :src="$withBase('/assets/gif_登录后在控制台监听.gif')">
+
+菜单自由**选择上级**、自由**增删改**：
+
+<img :src="$withBase('/assets/gif_新增菜单&修改菜单上级.gif')">
+
+自由**选择菜单的层级**，大屏路由亦可在子菜单挂载：
+
+<img :src="$withBase('/assets/gif_自由选择菜单的层级.gif')">
+
+修改“角色-菜单”关联，**控制菜单权限**：
+
+<img :src="$withBase('/assets/gif_修改角色-菜单关联.gif')">
+
+功能汇总：
 
 ```bash
 - 动态路由数据
@@ -35,8 +51,6 @@
   - 菜单管理（增删改查、修改层级、修改上级目录）
   - 纯前端也可控制路由权限
 ```
-
-<img :src="$withBase('/assets/gif_新增菜单.gif')">
 
 ## 目录结构
 
